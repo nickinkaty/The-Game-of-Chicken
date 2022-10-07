@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         HorizontalMovement();
-
+        
         grounded = rigidbody.Raycast(Vector2.down);
 
         if (grounded)
@@ -40,8 +40,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
-        inputAxis = Input.GetAxis("Horizontal");
-        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
+        inputAxis = Input.GetAxisRaw("Horizontal");
+        velocity.x = inputAxis * moveSpeed;
+        if (jumping)
+        {
+            velocity.x *= 0.5f;
+        }
+        // inputAxis = Input.GetAxis("Horizontal");
+        // velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
+        flipSprite();
     }
 
     private void GroundedMovement()
@@ -75,6 +82,18 @@ public class PlayerMovement : MonoBehaviour
         position += velocity * Time.fixedDeltaTime;
 
         rigidbody.MovePosition(position);
+    }
+
+    private void flipSprite()
+    {
+        if (inputAxis > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (inputAxis < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
 }

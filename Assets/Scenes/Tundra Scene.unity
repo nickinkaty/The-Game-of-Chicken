@@ -8008,7 +8008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434290335824734750, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 434290335824734750, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: maxJumpTime
