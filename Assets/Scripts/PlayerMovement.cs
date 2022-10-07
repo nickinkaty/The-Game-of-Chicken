@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpTime = 1f;
     public float jumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f);
     public float gravity => (-2f * maxJumpHeight) / Mathf.Pow(maxJumpTime / 2f, 2f);
+    public Animator Animator;
 
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inputAxis = Input.GetAxisRaw("Horizontal");
         velocity.x = inputAxis * moveSpeed;
+        Animator.setFloat("Speed", Math.Abs(inputAxis));
         if (jumping)
         {
             velocity.x *= 0.5f;
