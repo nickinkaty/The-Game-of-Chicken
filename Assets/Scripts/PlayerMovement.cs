@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inputAxis = Input.GetAxisRaw("Horizontal");
         velocity.x = inputAxis * moveSpeed;
-        Animator.setFloat("Speed", Math.Abs(inputAxis));
+        Animator.SetFloat("Speed", Mathf.Abs(inputAxis));
         if (jumping)
         {
             velocity.x *= 0.5f;
