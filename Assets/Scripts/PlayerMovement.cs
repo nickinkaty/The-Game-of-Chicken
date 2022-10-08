@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    private new Camera camera;
     private new Rigidbody2D rigidbody;
 
     private Vector2 velocity;
@@ -15,13 +16,14 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpTime = 1f;
     public float jumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f);
     public float gravity => (-2f * maxJumpHeight) / Mathf.Pow(maxJumpTime / 2f, 2f);
-    public Animator Animator;
+    //public Animator Animator;
 
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
 
     private void Awake()
     {
+        camera = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -43,13 +45,12 @@ public class PlayerMovement : MonoBehaviour
     {
         inputAxis = Input.GetAxisRaw("Horizontal");
         velocity.x = inputAxis * moveSpeed;
-        Animator.SetFloat("Speed", Mathf.Abs(inputAxis));
+        //Animator.SetFloat("Speed", Mathf.Abs(inputAxis));
         if (jumping)
         {
             velocity.x *= 0.5f;
         }
-        // inputAxis = Input.GetAxis("Horizontal");
-        // velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
+
         flipSprite();
     }
 
@@ -82,6 +83,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 position = rigidbody.position;
         position += velocity * Time.fixedDeltaTime;
+
+        // clamp within the screen bounds
+        Vector2 leftEdge = camera.ScreenToWorldPoint(Vector2.zero);
+        Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        position.x = Mathf.Clamp(position.x, leftEdge.x + 0.5f, rightEdge.x - 0.5f);
 
         rigidbody.MovePosition(position);
     }

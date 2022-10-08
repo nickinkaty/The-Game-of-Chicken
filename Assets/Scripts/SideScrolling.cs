@@ -8,6 +8,9 @@ public class SideScrolling : MonoBehaviour
 
     public float height = 6.5f;
 
+    public int minX = -3;
+    public int minY  = -3;
+
     private void Awake()
     {
         camera = GetComponent<Camera>();
@@ -17,10 +20,11 @@ public class SideScrolling : MonoBehaviour
     private void LateUpdate()
     {
         // track the player moving to the right
-        // transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        // transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); 
         Vector3 cameraPosition = transform.position;
-        cameraPosition.x = Mathf.Max(cameraPosition.x, player.position.x);
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        cameraPosition.x = Mathf.Max(minX, player.position.x);
+        cameraPosition.y = Mathf.Max(minY, player.position.y);
+        transform.position = cameraPosition;
     }
 
 }
