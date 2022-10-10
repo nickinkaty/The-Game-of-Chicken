@@ -49,8 +49,14 @@ public class PlayerMovement : MonoBehaviour
         Animator.SetFloat("Speed", Mathf.Abs(inputAxis));
         if (jumping)
         {
+            Animator.SetBool("isJumping", true);
             velocity.x *= 0.5f;
         }
+        else
+        {
+            Animator.SetBool("isJumping", false);
+        }
+
 
         flipSprite();
     }
