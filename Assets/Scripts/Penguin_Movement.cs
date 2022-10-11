@@ -54,6 +54,7 @@ public class Penguin_Movement : MonoBehaviour
             {
                 rb2d.velocity = new Vector2(moveSpeed, -moveSpeed);
             }
+            // Animator.SetFloat("Speed", Mathf.Abs(rb2d.velocity));
         }
         else
         {
