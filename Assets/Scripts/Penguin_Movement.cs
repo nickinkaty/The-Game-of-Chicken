@@ -28,6 +28,7 @@ public class Penguin_Movement : MonoBehaviour
     {
         //distance to player
         float distToPlayer = Vector2.Distance(transform.position, player.position);
+        Flip();
         
         if (distToPlayer < agroRange)
         {
@@ -46,9 +47,9 @@ public class Penguin_Movement : MonoBehaviour
         {
             //ememy is to the left side of the player, move right
             rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(-1,1);
-            //transform.localScale = new Vector3(-1,1,1);
-            //Flip();
+            // transform.localScale = new Vector2(-1,1);
+            transform.localScale = new Vector3(-1,1,1);
+            // Flip();
             if(transform.position.y > player.position.y)
             {
                 rb2d.velocity = new Vector2(moveSpeed, -moveSpeed);
@@ -58,9 +59,9 @@ public class Penguin_Movement : MonoBehaviour
         {
             //ememy is to the right side of the player, move right
             rb2d.velocity = new Vector2(-moveSpeed,0);
-            transform.localScale = new Vector2(1,-1);
-            //transform.localScale = new Vector3(1,1,1);
-            //Flip();
+            // transform.localScale = new Vector2(1,-1);
+            transform.localScale = new Vector3(1,1,1);
+            // Flip();
             if(transform.position.y > player.position.y)
             {
                 rb2d.velocity = new Vector2(-moveSpeed, -moveSpeed);
@@ -76,8 +77,9 @@ public class Penguin_Movement : MonoBehaviour
 
     void Flip()
     {
-        facingRight = !facingRight;
-        transform.Rotate(0,180,0);
+        // facingRight = !facingRight;
+        // transform.Rotate(0,180,0);
+
     }
     
     
