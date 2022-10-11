@@ -14,8 +14,9 @@ public class Penguin_Movement : MonoBehaviour
     float moveSpeed;
 
     Rigidbody2D rb2d;
+    public Animator Animator;
 
-    private bool facingRight = true;
+    // private bool facingRight = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class Penguin_Movement : MonoBehaviour
     {
         //distance to player
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        Flip();
+        // Flip();
         
         if (distToPlayer < agroRange)
         {
@@ -38,8 +39,7 @@ public class Penguin_Movement : MonoBehaviour
         {
             StopChasingPlayer();
         }
-        
-
+        Animator.SetFloat("Speed", Mathf.Abs(moveSpeed));
     }
     void ChasePlayer()
     {
@@ -67,7 +67,6 @@ public class Penguin_Movement : MonoBehaviour
                 rb2d.velocity = new Vector2(-moveSpeed, -moveSpeed);
             }
         }
-        
     }
 
     void StopChasingPlayer()
@@ -75,12 +74,11 @@ public class Penguin_Movement : MonoBehaviour
         rb2d.velocity = new Vector2(0,0);
     }
 
-    void Flip()
-    {
-        // facingRight = !facingRight;
-        // transform.Rotate(0,180,0);
-
-    }
+    // void Flip()
+    // {
+    //     facingRight = !facingRight;
+    //     transform.Rotate(0,180,0);
+    // }
     
     
 }
