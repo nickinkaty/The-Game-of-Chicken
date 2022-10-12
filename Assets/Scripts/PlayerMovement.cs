@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     {
         inputAxis = Input.GetAxisRaw("Horizontal");
         velocity.x = inputAxis * moveSpeed;
-        // Animator.SetFloat("Speed", Mathf.Abs(inputAxis));
         Animator.SetFloat("Speed", Mathf.Abs(inputAxis));
         if (jumping)
         {
@@ -113,11 +112,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void flipSprite()
     {
-        if (inputAxis > 0)
+        if (inputAxis > 0) //moving right
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (inputAxis < 0)
+        else if (inputAxis < 0) //moving left
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
