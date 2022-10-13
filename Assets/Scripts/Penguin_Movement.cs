@@ -8,10 +8,10 @@ public class Penguin_Movement : MonoBehaviour
     Transform player;
 
     [SerializeField]
-    float agroRange;
+    float agroRange, range = 5f;
 
     [SerializeField]
-    float moveSpeed;
+    float moveSpeed, speed = 2f;
 
     Rigidbody2D rb2d;
     public Animator Animator;
@@ -21,7 +21,9 @@ public class Penguin_Movement : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        
+        player = GameObject.Find("Ranger").transform;
+        agroRange = range;
+        moveSpeed = speed;
     }
 
     // Update is called once per frame
