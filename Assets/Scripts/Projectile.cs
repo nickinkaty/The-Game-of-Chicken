@@ -18,9 +18,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.TryGetComponent<Penguin>(out Penguin penguinComponent))
+        {
+            penguinComponent.takeDamage(1);
+        }
         //Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        }
+    }
 
     
     
