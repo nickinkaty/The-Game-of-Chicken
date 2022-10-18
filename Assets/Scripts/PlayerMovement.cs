@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private new Camera camera;
     private new Rigidbody2D rigidbody;
 
+    private Vector3 respawnPoint;
     private Vector2 velocity;
     private float inputAxis;
 
@@ -20,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
+
+    void Start()
+    {
+        respawnPoint = transform.position;
+    }
 
     private void Awake()
     {
@@ -119,6 +125,14 @@ public class PlayerMovement : MonoBehaviour
         else if (inputAxis < 0) //moving left
         {
             transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Checkpoint")
+        {
+            respawnPoint = transform.position;
         }
     }
 
