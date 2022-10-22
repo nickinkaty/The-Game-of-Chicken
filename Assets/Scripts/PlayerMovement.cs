@@ -120,28 +120,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void flipSprite()
     {
-        /* Vector2 move = Vector2.zero;
-         move.x = Input.GetAxis("Horizontal");
-
-         Vector3 scale = transform.localScale;
-         bool flip = (scale.x < 0.0f ? (move.x > 0.01f) : (move.x < 0.01f)); */
-
-        if ((inputAxis < 0 && isFacingRight) || (inputAxis > 0 && !isFacingRight))
+        if ((inputAxis > 0 && isFacingRight) || (inputAxis < 0 && !isFacingRight))
         {
             isFacingRight = !isFacingRight;
             transform.Rotate(new Vector3(0, 180, 0));
         }
 
-        /*f (inputAxis > 0) //moving right
-        {
-            transform.Rotate(0, 0, 0);
-            // transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (inputAxis < 0) //moving left
-        {
-            transform.Rotate(0, 180, 0);
-            // transform.localScale = new Vector3(-1, 1, 1);
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
