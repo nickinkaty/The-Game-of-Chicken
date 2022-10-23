@@ -17,12 +17,18 @@ public class HealthSystem : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Space)){
+        /*if(Input.GetKeyDown(KeyCode.Space)){
             TakeDamage(20);
-        }
+        }*/
     }
-    void TakeDamage(int damage){
+    public void TakeDamage(int damage){
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        /*if (currentHealth >= 0) // IF PLAYER DIES THEN
+        {
+            player.GetComponent("CharacterController").enbaled = false;
+        }*/
+
     }
 }
