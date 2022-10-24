@@ -11,7 +11,7 @@ public class Penguin_Movement_Platform : MonoBehaviour
     [SerializeField] Transform groundCheckPoint;
     [SerializeField] float circleRadius;
     [SerializeField] LayerMask groundLayer;
-    private bool checkingGround;
+    public bool checkingGround = true;
     [Header("Other")]
     private Rigidbody2D enemyRB;
     // Start is called before the first frame update

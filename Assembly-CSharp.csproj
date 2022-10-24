@@ -36,12 +36,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\UI\HealthSystem.cs" />
+     <Compile Include="Assets\Scripts\Penguin_Spawner.cs" />
+     <Compile Include="Assets\Scripts\Environment_Damage.cs" />
+     <Compile Include="Assets\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+     <Compile Include="Assets\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Penguin_Movement.cs" />
+     <Compile Include="Assets\Scripts\Penguin.cs" />
      <Compile Include="Assets\Scripts\SideScrolling.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Extensions.cs" />
      <Compile Include="Assets\UI\SceneSwitcher.cs" />
-     <Compile Include="Assets\Scripts\Penguin_Movement.cs" />
      <Compile Include="Assets\Scripts\Penguin_Movement_Platform.cs" />
+     <Compile Include="Assets\UI\EnemyHealthSystem.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\Enemy_Patrol.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
