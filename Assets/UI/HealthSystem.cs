@@ -24,11 +24,11 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage){
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
 
-        /*if (currentHealth >= 0) // IF PLAYER DIES THEN
-        {
-            player.GetComponent("CharacterController").enbaled = false;
-        }*/
-
+    public void setHealth(int health)
+    {
+        currentHealth = health;
+        healthBar.SetHealth(health);
     }
 }

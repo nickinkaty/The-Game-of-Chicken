@@ -17,17 +17,11 @@ public class Environment_Damage : MonoBehaviour
 
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            //var healthSystem = collision.GetComponent<HealthSystem>();
-
-            //if (healthSystem != null)
-            //{
-            Debug.Log("COLLISION");
             healthSystem.TakeDamage(environmentDamage);
-            //}
         }
     }
 }
