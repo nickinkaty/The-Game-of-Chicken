@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private new Camera camera;
     private new Rigidbody2D rigidbody;
 
+    private Vector3 respawnPoint;
     private Vector2 velocity;
     private float inputAxis;
 
+    public bool isFacingRight;
     public float moveSpeed = 3f;
     public float maxJumpHeight = 5f;
     public float maxJumpTime = 1f;
@@ -20,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
+
+    void Start()
+    {
+        respawnPoint = transform.position;
+    }
 
     private void Awake()
     {
@@ -110,15 +117,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     private void flipSprite()
     {
-        if (inputAxis > 0) //moving right
+        if ((inputAxis > 0 && isFacingRight) || (inputAxis < 0 && !isFacingRight))
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            isFacingRight = !isFacingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
         }
-        else if (inputAxis < 0) //moving left
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Checkpoint")
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            respawnPoint = transform.position;
         }
     }
 

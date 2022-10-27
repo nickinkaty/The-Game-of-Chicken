@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Transform FirePosition;
-    public Transform FirePositionLeft;
     public GameObject projectile;
     public GameObject egg;
     public Animator Animator;
@@ -28,14 +27,6 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator InstantiateEgg()
     {
         yield return new WaitForSeconds(.8f);
-        if(transform.localScale.x > 0)
-        {
-            Instantiate(egg, FirePosition.position, FirePosition.rotation);
-        }
-        else
-        {
-            Instantiate(egg, FirePositionLeft.position, FirePositionLeft.rotation);
-        }
-        // Instantiate(egg, FirePosition.position, FirePosition.rotation);
+        Instantiate(egg, FirePosition.position, FirePosition.rotation);
     }
 }
