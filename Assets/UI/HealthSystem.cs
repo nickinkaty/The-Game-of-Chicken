@@ -8,6 +8,7 @@ public class HealthSystem : MonoBehaviour
     public int penguinDamage = 20;
     public int bossDamage1 = 25;
     public int currentHealth;
+    public Animator Animator;
 
     public HealthBar healthBar;
 

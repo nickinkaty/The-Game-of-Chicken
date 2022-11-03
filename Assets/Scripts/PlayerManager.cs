@@ -43,8 +43,15 @@ public class PlayerManager : MonoBehaviour
     {
         if (healthSystem.currentHealth <= 0)
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
+            Animator Animator = healthSystem.GetComponent<Animator>();
+            Animator.SetTrigger("isDead");
+            StartCoroutine(respawn());
             healthSystem.setHealth(100);
         }
+    }
+    IEnumerator respawn()
+    {
+        yield return new WaitForSeconds(1.3f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
     }
 }
