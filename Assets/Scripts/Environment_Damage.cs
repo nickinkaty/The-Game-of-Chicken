@@ -24,4 +24,13 @@ public class Environment_Damage : MonoBehaviour
             healthSystem.TakeDamage(environmentDamage);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log(gameObject.tag);
+        if (collision.gameObject.tag == "Player" && gameObject.tag == "Constant Collision")
+        {
+            healthSystem.TakeDamage(environmentDamage);
+        }
+    }
 }
