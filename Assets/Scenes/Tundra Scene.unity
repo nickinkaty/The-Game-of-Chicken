@@ -537,6 +537,7 @@ MonoBehaviour:
   penguinDamage: 20
   bossDamage1: 25
   currentHealth: 0
+  Animator: {fileID: 486374184}
   healthBar: {fileID: 825867442}
 --- !u!1 &518073160
 GameObject:

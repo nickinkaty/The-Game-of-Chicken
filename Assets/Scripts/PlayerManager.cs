@@ -51,7 +51,7 @@ public class PlayerManager : MonoBehaviour
     }
     IEnumerator respawn()
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1f);
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
     }
 }
