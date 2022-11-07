@@ -829,58 +829,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5386408798557573665, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
   m_PrefabInstance: {fileID: 1982490397}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &486374183
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486374178}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1865741470, guid: fc27ea0ce94bb804a88034f5355037e4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.5, y: 1.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!95 &486374184
 Animator:
   serializedVersion: 4
@@ -906,11 +854,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1118638910293237164, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
   m_PrefabInstance: {fileID: 1982490397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &486374193
+--- !u!114 &486374193 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6338282386090566569, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+  m_PrefabInstance: {fileID: 1982490397}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486374178}
   m_Enabled: 1
@@ -918,12 +865,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe950d6cd86562b4e8be2d046fb7664a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  penguinDamage: 20
-  bossDamage1: 25
-  currentHealth: 0
-  healthBar: {fileID: 825867442}
-  Animator: {fileID: 0}
+--- !u!114 &486374197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8083122717547771300, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+  m_PrefabInstance: {fileID: 1982490397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486374178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fac1d43d59e0a042a03cf7dcc9b4c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506125800
 GameObject:
   m_ObjectHideFlags: 0
@@ -9182,6 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
+  isDead: 0
   pauseMenu: {fileID: 2036462788}
 --- !u!4 &707585282
 Transform:
@@ -11252,14 +11205,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1754059471352504147, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
-      propertyPath: Animator
-      value: 
-      objectReference: {fileID: 486374184}
-    - target: {fileID: 1754059471352504147, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
-      propertyPath: FirePosition
-      value: 
-      objectReference: {fileID: 1889610703}
     - target: {fileID: 2280223740692034643, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -11308,6 +11253,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6338282386090566569, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 825867442}
     - target: {fileID: 7757857690772389386, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.003
@@ -11316,10 +11265,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.006
       objectReference: {fileID: 0}
-    - target: {fileID: 8813071948530869143, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+    - target: {fileID: 7899855801133826413, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 486374184}
+    - target: {fileID: 7899855801133826413, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: EnergySystem
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899855801133826413, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: FirePosition
+      value: 
+      objectReference: {fileID: 1889610703}
+    - target: {fileID: 7899855801133826413, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: energySystem
+      value: 
+      objectReference: {fileID: 486374197}
+    - target: {fileID: 8083122717547771300, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 316965490}
+    - target: {fileID: 8083122717547771300, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: energyRecoveryRate
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
 --- !u!1 &1996478227

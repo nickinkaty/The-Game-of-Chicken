@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public HealthSystem healthSystem;
+    public bool isDead = false;
+
     public static bool isPauseMenu;
     public GameObject pauseMenu;
 
@@ -41,17 +43,25 @@ public class PlayerManager : MonoBehaviour
 
     void respawnPlayer()
     {
-        if (healthSystem.currentHealth <= 0)
+        if (healthSystem.currentHealth <= 0 && !isDead)
         {
+            isDead = true;
             Animator Animator = healthSystem.GetComponent<Animator>();
             Animator.SetTrigger("isDead");
             StartCoroutine(respawn());
-            healthSystem.setHealth(100);
+            StartCoroutine(resetHP());
         }
     }
     IEnumerator respawn()
     {
         yield return new WaitForSeconds(1f);
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
+    }
+
+    IEnumerator resetHP()
+    {
+        yield return new WaitForSeconds(1.05f);
+        healthSystem.setHealth(100);
+        isDead = false;
     }
 }

@@ -10,22 +10,22 @@ public class PlayerAttack : MonoBehaviour
     public GameObject egg;
     public Animator Animator;
 
-    public static int fireballEnergy = 20;
-    public static int eggBombEnergy = 30;
+    public static float fireballEnergy = 20.0f;
+    public static float eggBombEnergy = 30.0f;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && energySystem.currentEnergy >= fireballEnergy)
         {
-            /*energySystem.LoseEnergy(fireballEnergy);*/
+            energySystem.LoseEnergy(fireballEnergy);
             Instantiate(projectile, FirePosition.position, FirePosition.rotation);
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && energySystem.currentEnergy >= eggBombEnergy)
         {
-            /*energySystem.LoseEnergy(eggBombEnergy);*/
+            energySystem.LoseEnergy(eggBombEnergy);
             Animator.SetTrigger("EggBombing");
             StartCoroutine(InstantiateEgg());
         }
