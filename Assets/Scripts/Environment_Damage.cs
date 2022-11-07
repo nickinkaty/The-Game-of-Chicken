@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Environment_Damage : MonoBehaviour
 {
-    public int environmentDamage = 100;
+    public int environmentDamage;
     public HealthSystem healthSystem;
 
     void Start()

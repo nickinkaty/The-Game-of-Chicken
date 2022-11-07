@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class EnergyBar : MonoBehaviour
 {
     public Slider slider;
-    private HealthSystem healthsys;
+    //private HealthSystem healthsys;
+
     public void Setup(){
-        this.healthsys = healthsys;
+        //this.healthsys = healthsys;
     }
 
     void Update(){
-        slider.value = healthsys.GetHealthPercent();
+        //slider.value = healthsys.GetHealthPercent();
     }
 
     public void SetMaxEnergy(float energy){
@@ -20,7 +21,7 @@ public class EnergyBar : MonoBehaviour
         slider.value = energy;
     }
     
-    public void SetEnergy(float energy){
+    public void setUIEnergyBar(float energy){
         slider.value = energy;
     }
     

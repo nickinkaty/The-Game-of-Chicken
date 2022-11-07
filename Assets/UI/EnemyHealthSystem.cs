@@ -24,6 +24,6 @@ public class EnemyHealthSystem : MonoBehaviour
     }
     void TakeDamage(int damage){
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        healthBar.SetUIHealthBar(currentHealth);
     }
 }
