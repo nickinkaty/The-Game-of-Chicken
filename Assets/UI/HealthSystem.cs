@@ -22,6 +22,7 @@ public class HealthSystem : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         currentEnergy = 0;
         energyBar.SetMaxEnergy(maxEnergy);
+        SetEnergy(currentEnergy);
     }
 
     void Update(){
