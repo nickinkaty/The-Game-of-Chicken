@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnergyBar : MonoBehaviour
 {
     public Slider slider;
     private HealthSystem healthsys;
@@ -15,13 +15,13 @@ public class HealthBar : MonoBehaviour
         slider.value = healthsys.GetHealthPercent();
     }
 
-    public void SetMaxHealth(float health){
-        slider.maxValue = health;
-        slider.value = health;
+    public void SetMaxEnergy(float energy){
+        slider.maxValue = energy;
+        slider.value = energy;
     }
     
-    public void SetHealth(float health){
-        slider.value = health;
+    public void SetEnergy(float energy){
+        slider.value = energy;
     }
     
 }
