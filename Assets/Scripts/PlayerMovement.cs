@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerManager playerManager;
+
     private new Camera camera;
     private new Rigidbody2D rigidbody;
 
@@ -36,15 +38,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        HorizontalMovement();
-        
-        grounded = rigidbody.Raycast(Vector2.down);
-
-        if (grounded)
+        if (!playerManager.isDead)
         {
-            GroundedMovement();
-        }
+            HorizontalMovement();
 
+            grounded = rigidbody.Raycast(Vector2.down);
+
+            if (grounded)
+            {
+                GroundedMovement();
+            }
+        }
+        else
+        {
+            // PREVENT MOVING WHEN DEAD
+            velocity.x = 0;
+        }
         ApplyGravity();
     }
 

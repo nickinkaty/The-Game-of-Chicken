@@ -11414,6 +11414,14 @@ PrefabInstance:
       propertyPath: Animator
       value: 
       objectReference: {fileID: 486374184}
+    - target: {fileID: 434290335824734750, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 486374193}
+    - target: {fileID: 434290335824734750, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 707585281}
     - target: {fileID: 1118638910293237164, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -11468,7 +11476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003460749832993693, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4003460749832993693, guid: 5b5bd0205770c424ba32baf49c66ba1d, type: 3}
       propertyPath: m_Simulated
