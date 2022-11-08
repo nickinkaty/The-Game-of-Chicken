@@ -13876,6 +13876,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4832262525142494970, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: range
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4832262525142494975, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
       propertyPath: m_Name
       value: Penguin (2)
