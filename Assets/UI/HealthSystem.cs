@@ -32,6 +32,15 @@ public class HealthSystem : MonoBehaviour
         healthBar.SetUIHealthBar(currentHealth);
     }
 
+    //Recovery function
+    public void recoverHealth(int recovery)
+    {
+        currentHealth += recovery;
+        if(currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        healthBar.SetUIHealthBar(currentHealth);
+    }
+
     //Health Functions
     public void setHealth(int health)
     {

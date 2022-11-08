@@ -16,7 +16,7 @@ public class MyEventTriggerOnEnter : MonoBehaviour
         }
         else
         {
-            if(checkpointreached == false){
+            if(checkpointreached == false && other.gameObject.tag == "Player"){
                 print("myEventTriggerOnEnter Activated. Triggering" + myEvents);
                 myEvents.Invoke();
                 checkpointreached = true;

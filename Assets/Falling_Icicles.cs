@@ -24,7 +24,8 @@ public class Falling_Icicles : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter2D (Collision2D obj)
     {
-        Destroy(gameObject);
+        if (obj.gameObject.name.Equals ("Ranger"))
+            Destroy(gameObject);
     }
 }
  
