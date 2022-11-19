@@ -9,10 +9,13 @@ public class Penguin : MonoBehaviour
 
     public HealthbarBehavior Healthbar;
 
+    public Vector3 enemySpawnLocation;
+
 
     // Start is called before the first frame update
     private void Start()
     {
+        enemySpawnLocation = this.transform.position;
         health = maxHealth;
         Healthbar.SetHealth(health, maxHealth);
     }
@@ -25,7 +28,16 @@ public class Penguin : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
+            Invoke("Respawn", 7);
         }
+    }
+
+    void Respawn()
+    {
+        this.transform.position = enemySpawnLocation;
+        this.gameObject.SetActive(true);
+        health = maxHealth;
+        Healthbar.SetHealth(maxHealth, maxHealth);
     }
 }

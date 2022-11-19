@@ -2392,6 +2392,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   Healthbar: {fileID: 170206193}
+  enemySpawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &617060709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17561,6 +17562,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   Healthbar: {fileID: 2003861844}
+  enemySpawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &2062794829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17802,6 +17804,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   Healthbar: {fileID: 543451738}
+  enemySpawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &2090013334
 MonoBehaviour:
   m_ObjectHideFlags: 0
