@@ -46,6 +46,7 @@ public class PlayerManager : MonoBehaviour
         if (healthSystem.currentHealth <= 0 && !isDead)
         {
             isDead = true;
+            AudioManagerScript.PlaySound("death");
             Animator Animator = healthSystem.GetComponent<Animator>();
             Animator.SetTrigger("isDead");
             StartCoroutine(respawn());

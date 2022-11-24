@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         // perform jump
         if (Input.GetButtonDown("Jump"))
         {
+            AudioManagerScript.PlaySound("jump");
             velocity.y = jumpForce;
             jumping = true;
         }

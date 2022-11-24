@@ -19,12 +19,14 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && energySystem.currentEnergy >= fireballEnergy)
         {
+            AudioManagerScript.PlaySound("fireball");
             energySystem.LoseEnergy(fireballEnergy);
             Instantiate(projectile, FirePosition.position, FirePosition.rotation);
         }
 
         if(Input.GetKeyDown(KeyCode.E) && energySystem.currentEnergy >= eggBombEnergy)
         {
+            AudioManagerScript.PlaySound("egg");
             energySystem.LoseEnergy(eggBombEnergy);
             Animator.SetTrigger("EggBombing");
             StartCoroutine(InstantiateEgg());
