@@ -249,7 +249,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
   damageInflicted: 15
-  cooldown: 3
+  cooldown: 150
+  maxCoolDown: 0
+  attack: 0
 --- !u!1 &91652268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1296,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: cooldown
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: 486374193}
@@ -1846,6 +1852,10 @@ PrefabInstance:
     - target: {fileID: 4832262525883956948, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: cooldown
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4832262525142494970, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
@@ -2934,7 +2944,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
   damageInflicted: 50
-  cooldown: 3
+  cooldown: 150
+  maxCoolDown: 0
+  attack: 0
 --- !u!114 &617060708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13509,6 +13521,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: cooldown
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
 --- !u!1001 &792295600
@@ -15587,7 +15603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
   damageInflicted: 15
-  cooldown: 3
+  cooldown: 150
+  maxCoolDown: 0
+  attack: 0
 --- !u!1 &1514033777
 GameObject:
   m_ObjectHideFlags: 0
@@ -15774,6 +15792,10 @@ PrefabInstance:
     - target: {fileID: 4832262525883956948, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: cooldown
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
@@ -17180,6 +17202,14 @@ PrefabInstance:
     - target: {fileID: 4832262525883956948, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: cooldown
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916298727539206543, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
@@ -19041,7 +19071,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
   damageInflicted: 50
-  cooldown: 3
+  cooldown: 150
+  maxCoolDown: 0
+  attack: 0
 --- !u!4 &2071506345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4832262525142494968, guid: bee3e116e2ac94c4f8e5700cbb4c3f9b, type: 3}
@@ -19061,7 +19093,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
   damageInflicted: 15
-  cooldown: 3
+  cooldown: 150
+  maxCoolDown: 0
+  attack: 0
 --- !u!1 &2090013330
 GameObject:
   m_ObjectHideFlags: 0
@@ -19115,7 +19149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 486374193}
   damageInflicted: 50
-  cooldown: 3
+  cooldown: 150
+  maxCoolDown: 0
+  attack: 0
 --- !u!114 &2090013333
 MonoBehaviour:
   m_ObjectHideFlags: 0
