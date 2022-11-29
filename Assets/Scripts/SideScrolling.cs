@@ -10,6 +10,7 @@ public class SideScrolling : MonoBehaviour
 
     public int minX = -3;
     public int minY  = -3;
+    public bool isBossFight  = false;
 
     private void Awake()
     {
@@ -22,7 +23,15 @@ public class SideScrolling : MonoBehaviour
         // track the player moving to the right
         // transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); 
         Vector3 cameraPosition = transform.position;
-        cameraPosition.x = Mathf.Max(minX, player.position.x);
+        if (isBossFight && player.position.x >= 9)
+        {
+            cameraPosition.x = 9;
+        }
+        else
+        {
+            cameraPosition.x = Mathf.Max(minX, player.position.x);
+        }
+
         cameraPosition.y = Mathf.Max(minY, player.position.y);
         transform.position = cameraPosition;
     }

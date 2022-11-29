@@ -11,6 +11,8 @@ public class Penguin : MonoBehaviour
 
     public Vector3 enemySpawnLocation;
 
+    public bool isBossFight = false;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -29,7 +31,10 @@ public class Penguin : MonoBehaviour
         if (health <= 0)
         {
             this.gameObject.SetActive(false);
-            Invoke("Respawn", 7);
+            if (!isBossFight)
+            {
+                Invoke("Respawn", 7);
+            }
         }
     }
 

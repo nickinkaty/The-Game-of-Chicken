@@ -17,14 +17,14 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && energySystem.currentEnergy >= fireballEnergy)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && energySystem.currentEnergy >= fireballEnergy)
         {
             AudioManagerScript.PlaySound("fireball");
             energySystem.LoseEnergy(fireballEnergy);
             Instantiate(projectile, FirePosition.position, FirePosition.rotation);
         }
 
-        if(Input.GetKeyDown(KeyCode.E) && energySystem.currentEnergy >= eggBombEnergy)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && energySystem.currentEnergy >= eggBombEnergy)
         {
             AudioManagerScript.PlaySound("egg");
             energySystem.LoseEnergy(eggBombEnergy);
