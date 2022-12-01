@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    public static AudioClip playerJumpSound, fireBallSound, eggShootSound, playerDeathSound, playerWalkSound;
+    public static AudioClip playerJumpSound, fireBallSound, eggShootSound, playerDeathSound, playerWalkSound, playerChickenJump, playerChickenDeath;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,8 @@ public class AudioManagerScript : MonoBehaviour
         eggShootSound = Resources.Load<AudioClip>("egg");
         playerDeathSound = Resources.Load<AudioClip>("death");
         playerWalkSound = Resources.Load<AudioClip>("walking");
+        playerChickenJump = Resources.Load<AudioClip>("ChickenJump");
+        playerChickenDeath = Resources.Load<AudioClip>("ChickenDeath");
         
 
         audioSrc = GetComponent<AudioSource>();
@@ -34,6 +36,7 @@ public class AudioManagerScript : MonoBehaviour
         {
             case "jump":
                 audioSrc.PlayOneShot(playerJumpSound);
+                audioSrc.PlayOneShot(playerChickenJump);
                 break;
             case "fireball":
                 audioSrc.PlayOneShot(fireBallSound);
@@ -43,6 +46,7 @@ public class AudioManagerScript : MonoBehaviour
                 break;
             case "death":
                 audioSrc.PlayOneShot(playerDeathSound);
+                audioSrc.PlayOneShot(playerChickenDeath);
                 break;
             case "walk":
                 audioSrc.Play();

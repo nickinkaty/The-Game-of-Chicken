@@ -3417,7 +3417,7 @@ MonoBehaviour:
   Healthbar: {fileID: 170206193}
   enemySpawnLocation: {x: 0, y: 0, z: 0}
   isBossFight: 0
-  animator: {fileID: 0}
+  animator: {fileID: 617060712}
   prize: {fileID: 0}
   prizePos: {fileID: 0}
 --- !u!114 &617060709
@@ -19481,7 +19481,7 @@ MonoBehaviour:
   Healthbar: {fileID: 543451738}
   enemySpawnLocation: {x: 0, y: 0, z: 0}
   isBossFight: 0
-  animator: {fileID: 0}
+  animator: {fileID: 2090013337}
   prize: {fileID: 0}
   prizePos: {fileID: 0}
 --- !u!114 &2090013334
