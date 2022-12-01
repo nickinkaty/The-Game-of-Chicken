@@ -154,4 +154,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        FindStartPos();
+    }
+
+    void FindStartPos()
+    {
+        transform.position = GameObject.FindWithTag("StartPos").transform.position;
+    }
+
 }
