@@ -89,6 +89,14 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpForce;
             jumping = true;
         }
+        else if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            AudioManagerScript.PlaySound("walk");
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            AudioManagerScript.PlaySound("stop");
+        }
     }
 
     private void ApplyGravity()

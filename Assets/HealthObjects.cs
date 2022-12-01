@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthObjects : MonoBehaviour
 {
+    [SerializeField]
     public int healthRecovery = 10;
     public HealthSystem healthSystem;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class HealthObjects : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D obj)
     {
-        if (obj.gameObject.name.Equals ("Ranger"))
+        if (obj.gameObject.name.Equals("Ranger"))
         {
             healthSystem.recoverHealth(healthRecovery);
             Destroy(gameObject);

@@ -13,6 +13,10 @@ public class Penguin : MonoBehaviour
 
     public bool isBossFight = false;
 
+    public Animator animator;
+    public GameObject prize;
+    public Transform prizePos;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -30,11 +34,17 @@ public class Penguin : MonoBehaviour
 
         if (health <= 0)
         {
-            this.gameObject.SetActive(false);
-            if (!isBossFight)
-            {
-                Invoke("Respawn", 7);
-            }
+            animator.SetTrigger("Death");
+        }
+    }
+
+    public void Death()
+    {
+        this.gameObject.SetActive(false);
+        if (!isBossFight)
+        {
+            Instantiate(prize, prizePos.position, Quaternion.Euler(new Vector3(0,180,90)));
+            Invoke("Respawn", 7);
         }
     }
 

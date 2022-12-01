@@ -39,7 +39,10 @@ public class EnergySystem : MonoBehaviour
     //Energy Functions
     public void GainEnergy(int energy)
     {
-        currentEnergy += energy;
+        if(currentEnergy + energy > maxEnergy)
+            currentEnergy = maxEnergy;
+        else
+            currentEnergy += energy;
         energyBar.setUIEnergyBar(currentEnergy);
     }
 

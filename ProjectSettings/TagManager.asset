@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Constant Collision
+  - Floor
+  - Energy
   layers:
   - Default
   - TransparentFX

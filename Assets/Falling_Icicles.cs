@@ -8,6 +8,7 @@ using UnityEngine;
 public class Falling_Icicles : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,18 @@ public class Falling_Icicles : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter2D (Collision2D obj)
     {
-        if (obj.gameObject.name.Equals ("Ranger"))
-            Destroy(gameObject);
+        if (obj.gameObject.name.Equals ("Ranger") || obj.gameObject.tag.Equals("Floor"))
+        {
+            rigidbody.velocity = Vector2.zero;
+            animator.SetTrigger("Collision");
+            
+        }
+            
+    }
+
+    public void collided()
+    {
+        Destroy(gameObject);
     }
 }
  
