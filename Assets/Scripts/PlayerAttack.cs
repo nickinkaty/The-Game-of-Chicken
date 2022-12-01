@@ -17,19 +17,21 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && energySystem.currentEnergy >= fireballEnergy)
-        {
-            AudioManagerScript.PlaySound("fireball");
-            energySystem.LoseEnergy(fireballEnergy);
-            Instantiate(projectile, FirePosition.position, FirePosition.rotation);
-        }
+        if(!PauseMenu.GameIsPaused){
+            if (Input.GetKeyDown(KeyCode.Mouse0) && energySystem.currentEnergy >= fireballEnergy)
+            {
+                AudioManagerScript.PlaySound("fireball");
+                energySystem.LoseEnergy(fireballEnergy);
+                Instantiate(projectile, FirePosition.position, FirePosition.rotation);
+            }
 
-        if(Input.GetKeyDown(KeyCode.Mouse1) && energySystem.currentEnergy >= eggBombEnergy)
-        {
-            AudioManagerScript.PlaySound("egg");
-            energySystem.LoseEnergy(eggBombEnergy);
-            Animator.SetTrigger("EggBombing");
-            StartCoroutine(InstantiateEgg());
+            if(Input.GetKeyDown(KeyCode.Mouse1) && energySystem.currentEnergy >= eggBombEnergy)
+            {
+                AudioManagerScript.PlaySound("egg");
+                energySystem.LoseEnergy(eggBombEnergy);
+                Animator.SetTrigger("EggBombing");
+                StartCoroutine(InstantiateEgg());
+            }
         }
 
     }
